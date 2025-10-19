@@ -3,8 +3,8 @@ node_modules/
 package-lock.json
 
 # Build outputs
-dist/
-*.exe
+
+
 *.bin
 
 # Logs
@@ -35,8 +35,7 @@ temp/
 *.tmp
 *.bak
 
-# User configs
-.klyx-tunnel/
+
 
 # Server specific
 server/frp_*
