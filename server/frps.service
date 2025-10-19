@@ -1,0 +1,19 @@
+[Unit]
+Description=FRP Server Service - Klyx Tunnel
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+Restart=on-failure
+RestartSec=5s
+ExecStart=/usr/bin/frps -c /etc/frp/frps.toml
+LimitNOFILE=1048576
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

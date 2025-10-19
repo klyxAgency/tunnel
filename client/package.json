@@ -1,0 +1,56 @@
+{
+    "name": "klyx-tunnel",
+    "version": "1.0.0",
+    "description": "CLI tool for tunneling local servers and sharing files via klyx.agency",
+    "main": "src/index.js",
+    "bin": {
+        "klyx-tunnel": "src/index.js"
+    },
+    "scripts": {
+        "start": "node src/index.js",
+        "build": "node build.js",
+        "build:win": "pkg . --targets node18-win-x64 --output dist/klyx-tunnel-windows.exe",
+        "build:linux": "pkg . --targets node18-linux-x64 --output dist/klyx-tunnel-linux",
+        "build:mac": "pkg . --targets node18-macos-x64 --output dist/klyx-tunnel-macos",
+        "build:all": "npm run build"
+    },
+    "pkg": {
+        "assets": [
+            "node_modules/serve-index/**/*",
+            "node_modules/serve-static/**/*",
+            "node_modules/axios/**/*"
+        ],
+        "targets": [
+            "node18-win-x64",
+            "node18-linux-x64",
+            "node18-macos-x64"
+        ],
+        "outputPath": "dist"
+    },
+    "keywords": [
+        "tunnel",
+        "ngrok",
+        "frp",
+        "reverse-proxy",
+        "cli"
+    ],
+    "author": "Klyx Agency",
+    "license": "MIT",
+    "dependencies": {
+        "archiver": "^7.0.1",
+        "axios": "^1.6.2",
+        "boxen": "^5.1.2",
+        "chalk": "^4.1.2",
+        "commander": "^11.1.0",
+        "conf": "^10.2.0",
+        "express": "^4.18.2",
+        "find-process": "^1.4.7",
+        "inquirer": "^8.2.5",
+        "node-fetch": "^2.7.0",
+        "ora": "^5.4.1",
+        "serve-index": "^1.9.1"
+    },
+    "devDependencies": {
+        "pkg": "^5.8.1"
+    }
+}

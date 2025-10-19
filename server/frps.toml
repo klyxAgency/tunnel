@@ -1,0 +1,41 @@
+# FRP Server Configuration for Klyx Tunnel
+# Location: /etc/frp/frps.toml
+
+# Main server settings
+bindPort = 7000
+vhostHTTPPort = 80
+vhostHTTPSPort = 443
+
+# Authentication - CHANGE THIS TOKEN!
+auth.method = "token"
+auth.token = "klyx-tunnel-secret-2024-CHANGE-ME"
+
+# Subdomain support
+subDomainHost = "tunnel.klyx.agency"
+
+# Web Dashboard (optional monitoring)
+webServer.addr = "0.0.0.0"
+webServer.port = 7500
+webServer.user = "admin"
+webServer.password = "klyx-admin-2024"
+
+# Log settings
+log.to = "/var/log/frp/frps.log"
+log.level = "info"
+log.maxDays = 7
+
+# Performance settings
+transport.maxPoolCount = 5
+transport.tcpMux = true
+
+# Allow specific port ranges
+allowPorts = [
+  { start = 2000, end = 9000 },
+  { start = 10000, end = 50000 }
+]
+
+# Security
+transport.tls.enable = false
+
+# Enable monitoring
+enablePrometheus = true

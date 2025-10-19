@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+*.exe
+*.bin
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Configuration
+.env
+*.env
+.config
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# User configs
+.klyx-tunnel/
+
+# Server specific
+server/frp_*
+server/*.tar.gz
+
+# Client specific
+client/bin/
+
+
+# SSH keys
+*.pem
+*.key
+*.ppk
+```
+
+***
